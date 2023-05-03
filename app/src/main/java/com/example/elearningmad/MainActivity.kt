@@ -3,13 +3,11 @@ package com.example.elearningmad
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
-
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.elearningmad.databinding.ActivityMainBinding
 import com.example.elearningmad.ui.InitialPage
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.ktx.Firebase
 
 
 class MainActivity : AppCompatActivity() {
@@ -25,15 +23,15 @@ class MainActivity : AppCompatActivity() {
 //        setContentView(R.layout.activity_edit_profile)
 
 //        // ACCESS THE BUTTON USING BY ID
-//        val button = findViewById<Button>(R.id.button1)
-//
-//        button.setOnClickListener {
-//            // Create an Intent object that specifies the activity to navigate to
-//            val intent = Intent(this, InitialPage::class.java)
-//
-//            // Call the startActivity method and pass the Intent object as an argument
-//            startActivity(intent)
-//        }
+        val button = findViewById<Button>(R.id.button2)
+
+        button.setOnClickListener {
+            // Create an Intent object that specifies the activity to navigate to
+            val intent = Intent(this, InitialPage::class.java)
+
+            // Call the startActivity method and pass the Intent object as an argument
+            startActivity(intent)
+        }
 
     }
 
@@ -42,6 +40,10 @@ class MainActivity : AppCompatActivity() {
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("message")
 //
-        myRef.setValue("Hello, World!")
+        myRef.setValue("Hello, World vishwa!")
+    }
+
+    fun sendDataFireStore(){
+
     }
 }
