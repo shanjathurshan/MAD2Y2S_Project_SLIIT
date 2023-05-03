@@ -14,7 +14,7 @@
         <activity
             android:name=".ui.EditProfile"
             android:exported="false"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"/>
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
         <activity
             android:name=".ui.InitialPage"
             android:exported="false" />
