@@ -2,7 +2,8 @@
 
 Technologies - Kotlin + Firebase
 
-Node.js + MySQL API for User Management, Authentication and Registration
+Application Topic - E-Learning application
+Group Name        - E-Learning
 
 ```
 {
