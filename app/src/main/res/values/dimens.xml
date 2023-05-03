@@ -10,4 +10,5 @@
     <dimen name="heading1">24dp</dimen>
     <dimen name="heading2">34dp</dimen>
     <dimen name="heading3">44dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 </resources>

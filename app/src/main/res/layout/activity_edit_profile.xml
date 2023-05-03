@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background = "@drawable/gradient_drawable"
+    android:paddingLeft="@dimen/fragment_horizontal_margin"
+    android:paddingTop="@dimen/fragment_vertical_margin"
+    android:paddingRight="@dimen/fragment_horizontal_margin"
+    android:paddingBottom="@dimen/fragment_vertical_margin" >
+    <ImageView
+        android:id="@+id/imageViewLogo"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
+        android:layout_gravity="center"
+        android:src="@drawable/profile_img2" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="10dp"
+        android:drawableStart="@drawable/baseline_person_24"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins_light"
+        android:inputType="textPersonName"
+        android:text="Shan Jathurshan"
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/userIdNumber"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="10dp"
+        android:drawableStart="@drawable/baseline_numbers_24"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins_light"
+        android:inputType="textPersonName"
+        android:text="IT21246296"
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/editTextTextEmailAddress"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="10dp"
+        android:drawableStart="@drawable/baseline_email_24"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins_light"
+        android:hint="Email address"
+        android:text="Jathurshanm3@gmail.com"
+        android:inputType="textEmailAddress" />
+
+    <EditText
+        android:id="@+id/userStudies"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="10dp"
+        android:drawableStart="@drawable/baseline_school_24"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins_light"
+        android:inputType="textPersonName"
+        android:text="Sri lanka institute of information technology"
+        android:hint="Name" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_selector"
+        android:fontFamily="@font/poppins_semibold"
+        android:text="Update" />
+
+
+
+</LinearLayout>
