@@ -4,7 +4,7 @@ Technologies - Kotlin + Firebase
 
 **Application Topic** - E-Learning application
 
-**Group Name**        - E-Learning
+**Group Name** - E-Learning
 
 ```
 {
