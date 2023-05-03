@@ -13,34 +13,37 @@
     android:paddingBottom="@dimen/fragment_vertical_margin" >
     <ImageView
         android:id="@+id/imageViewLogo"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginTop="50dp"
+        android:layout_marginBottom="20dp"
         android:layout_gravity="center"
-        android:src="@drawable/graph" />
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="12dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="0dp"
-        android:fontFamily="@font/poppins_semibold"
-        android:gravity="center"
-        android:paddingTop="0dp"
-        android:paddingBottom="50dp"
-        android:text="@string/register"
-        android:textSize="24sp" />
+        android:src="@drawable/profile_img2" />
 
     <EditText
+        android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="10dp"
-        android:drawableStart="@drawable/baseline_email_24"
+        android:drawableStart="@drawable/baseline_person_24"
         android:drawablePadding="12dp"
         android:ems="10"
         android:fontFamily="@font/poppins_light"
         android:inputType="textPersonName"
+        android:text="Shan Jathurshan"
+        android:hint="Name" />
+
+    <EditText
+        android:id="@+id/userIdNumber"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginBottom="10dp"
+        android:drawableStart="@drawable/baseline_numbers_24"
+        android:drawablePadding="12dp"
+        android:ems="10"
+        android:fontFamily="@font/poppins_light"
+        android:inputType="textPersonName"
+        android:text="IT21246296"
         android:hint="Name" />
 
     <EditText
@@ -53,20 +56,21 @@
         android:ems="10"
         android:fontFamily="@font/poppins_light"
         android:hint="Email address"
+        android:text="Jathurshanm3@gmail.com"
         android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/userStudies"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginBottom="10dp"
-        android:drawableStart="@drawable/baseline_lock_24"
+        android:drawableStart="@drawable/baseline_school_24"
         android:drawablePadding="12dp"
         android:ems="10"
         android:fontFamily="@font/poppins_light"
-        android:hint="Password"
-        android:inputType="textPassword" />
-
+        android:inputType="textPersonName"
+        android:text="Sri lanka institute of information technology"
+        android:hint="Name" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/button"
@@ -75,43 +79,8 @@
         android:layout_marginTop="10dp"
         android:background="@drawable/button_selector"
         android:fontFamily="@font/poppins_semibold"
-        android:text="@string/register" />
+        android:text="Update" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_light"
-        android:gravity="center"
-        android:layout_marginTop="20dp"
-        android:text="@string/or_sign_up_with" />
 
-    <LinearLayout
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:paddingVertical="20dp"
-        android:layout_gravity="center"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:src="@drawable/icons8_facebook" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_weight="1"
-            android:src="@drawable/instagram_icon" />
-    </LinearLayout>
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_light"
-        android:gravity="center"
-        android:text="@string/already_have_an_account" />
 
 </LinearLayout>
