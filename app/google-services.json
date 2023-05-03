@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "69685331942",
+    "project_id": "elearningmad",
+    "storage_bucket": "elearningmad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:69685331942:android:22f9bb622800fb28927827",
+        "android_client_info": {
+          "package_name": "com.example.elearningmad"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "69685331942-a47286njkt2naljlmvgpmblr00t3o3o9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnVpuZbUYyuI5wa_M0_7HkEHbr__Ea0CQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "69685331942-a47286njkt2naljlmvgpmblr00t3o3o9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

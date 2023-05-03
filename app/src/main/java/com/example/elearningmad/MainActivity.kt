@@ -2,11 +2,14 @@ package com.example.elearningmad
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.example.elearningmad.databinding.ActivityMainBinding
 import com.example.elearningmad.ui.InitialPage
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.ktx.Firebase
 
 
 class MainActivity : AppCompatActivity() {
@@ -19,28 +22,26 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         getSupportActionBar()?.hide();
         setContentView(binding.root)
+//        setContentView(R.layout.activity_edit_profile)
 
-        val button = findViewById<Button>(R.id.button1)
-
-        button.setOnClickListener {
-            // Create an Intent object that specifies the activity to navigate to
-            val intent = Intent(this, InitialPage::class.java)
-
-            // Call the startActivity method and pass the Intent object as an argument
-            startActivity(intent)
-        }
-
-//        val navView: BottomNavigationView = binding.navView
+//        // ACCESS THE BUTTON USING BY ID
+//        val button = findViewById<Button>(R.id.button1)
 //
-//        val navController = findNavController(R.id.nav_host_fragment_activity_main)
-//        // Passing each menu ID as a set of Ids because each
-//        // menu should be considered as top level destinations.
-//        val appBarConfiguration = AppBarConfiguration(
-//            setOf(
-//                R.id.navigation_home, R.id.navigation_courses, R.id.navigation_profile
-//            )
-//        )
-//        setupActionBarWithNavController(navController, appBarConfiguration)
-//        navView.setupWithNavController(navController)
+//        button.setOnClickListener {
+//            // Create an Intent object that specifies the activity to navigate to
+//            val intent = Intent(this, InitialPage::class.java)
+//
+//            // Call the startActivity method and pass the Intent object as an argument
+//            startActivity(intent)
+//        }
+
+    }
+
+    fun sendData(view: View) {
+        // Write a message to the database
+        val database = FirebaseDatabase.getInstance()
+        val myRef = database.getReference("message")
+//
+        myRef.setValue("Hello, World!")
     }
 }
