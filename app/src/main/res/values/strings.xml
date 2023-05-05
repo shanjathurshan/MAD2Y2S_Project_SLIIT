@@ -10,7 +10,8 @@
 
     <string name="register">Register</string>
     <string name="or_sign_up_with">Or Sign up with</string>
-    <string name="already_have_an_account">Already have an account? Login</string>
+    <string name="already_have_an_account">Already have an account? </string>
+    <string name="loginLink">Login</string>
 
     <string name="login">Login</string>
     <string name="or_login_with">Or Login with</string>

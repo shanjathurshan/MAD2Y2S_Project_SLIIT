@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.elearningmad.Database.MyService
@@ -29,6 +30,7 @@ class RegisterUser : AppCompatActivity() {
     var uniId: EditText? = null
 
     var register: Button? = null
+    var loginLink: TextView? = null
     var isAllFieldsChecked = false
 
     var MyService = MyService();
@@ -54,22 +56,18 @@ class RegisterUser : AppCompatActivity() {
         uniId = findViewById(R.id.editUni)
 
         register = findViewById(R.id.register)
+        loginLink = findViewById(R.id.loginLink)
 //        val loading = binding.loading
 
+        // Register button onClick
         register?.setOnClickListener {
-
             MyService.hideKeyboard((register)!!) // hide the keyboard
-
             isAllFieldsChecked = CheckAllFields()
-
             // the boolean variable turns to be true then
             if (isAllFieldsChecked) {
-
                 auth.createUserWithEmailAndPassword(email.text.toString(),password.text.toString()).addOnCompleteListener { task ->
                     if(task.isSuccessful){
-
                         MyService.createUser(username.text.toString(), email.text.toString(), password.text.toString(), uni.text.toString(), phone.text.toString());
-
                         Toast.makeText(applicationContext,"Successfully registered!",Toast.LENGTH_LONG).show();
                         val i = Intent(this, LoginUser::class.java)
                         startActivity(i)
@@ -77,8 +75,13 @@ class RegisterUser : AppCompatActivity() {
                 }.addOnFailureListener { exception ->
                     Toast.makeText(applicationContext,exception.localizedMessage,Toast.LENGTH_LONG).show()
                 }
-
             }
+        }
+
+        // loginLink onclick
+        loginLink?.setOnClickListener {
+            val i = Intent(this, LoginUser::class.java)
+            startActivity(i)
         }
     }
 
