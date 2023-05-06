@@ -5,6 +5,7 @@ import android.content.ContentValues
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.IBinder
 import android.util.Log
 import android.view.View
@@ -53,6 +54,12 @@ class MyService : Service() {
         } else {
             Log.d(ContentValues.TAG, "User not available!")
         }
+    }
+
+    fun DeleteUser(context: Context){
+        val sharedPref : SharedPreferences = applicationContext.getSharedPreferences("PREFERENCE_FILE_KEY", MODE_PRIVATE)
+        val editor:  SharedPreferences.Editor = sharedPref.edit()
+        editor.remove("userId")
     }
 
 }

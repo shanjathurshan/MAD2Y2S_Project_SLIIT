@@ -12,9 +12,11 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.elearningmad.Database.MyService
 import com.example.elearningmad.R
 import com.example.elearningmad.databinding.FragmentProfileBinding
 import com.example.elearningmad.ui.EditProfile
+import com.example.elearningmad.ui.LoginUser
 import com.example.elearningmad.ui.data.model.Students
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -24,6 +26,7 @@ class ProfileFragment : Fragment() {
 
     private var _binding: FragmentProfileBinding? = null
     private lateinit var db: FirebaseFirestore
+    private lateinit var  auth: FirebaseAuth
 
     lateinit var loadingPB: ProgressBar
     lateinit var userDetails : Students
@@ -64,6 +67,15 @@ class ProfileFragment : Fragment() {
         layout02.setVisibility(View.GONE)
         layout03.setVisibility(View.GONE)
 
+        var MyService = MyService()
+
+        var logout = binding.logout
+
+        logout.setOnClickListener{
+            FirebaseAuth.getInstance().signOut();
+            val intent = Intent(requireContext(), LoginUser::class.java)
+            startActivity(intent)
+        }
 
         val btn: Button = binding.ProfileEditButton
         btn.setOnClickListener {
