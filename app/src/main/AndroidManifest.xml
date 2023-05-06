@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ElearningMAD"
         tools:targetApi="31">
+<<<<<<< HEAD
         <activity
             android:name=".WeekData"
             android:exported="false" />
@@ -29,6 +30,8 @@
         <activity
             android:name=".AddRewiev"
             android:exported="false" />
+=======
+>>>>>>> 254b41bb2bc87c6e4e889e112e45cf9d0551e645
 
         <service
             android:name=".Database.MyService"

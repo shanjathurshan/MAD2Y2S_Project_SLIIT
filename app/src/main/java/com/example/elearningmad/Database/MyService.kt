@@ -44,4 +44,15 @@ class MyService : Service() {
         }
     }
 
+    fun checkFirebaseUser(){
+        val user = FirebaseAuth.getInstance().currentUser
+
+        if (user != null) {
+            Log.d(ContentValues.TAG, "User available!")
+            Log.d(ContentValues.TAG,  user.uid)
+        } else {
+            Log.d(ContentValues.TAG, "User not available!")
+        }
+    }
+
 }
