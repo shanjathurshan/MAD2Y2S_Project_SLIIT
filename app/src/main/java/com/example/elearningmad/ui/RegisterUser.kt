@@ -2,6 +2,7 @@ package com.example.elearningmad.ui
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -16,12 +17,6 @@ class RegisterUser : AppCompatActivity() {
     
     private lateinit var binding : ActivityRegisterUserBinding
     private lateinit var  auth: FirebaseAuth
-
-//    var username: EditText? = null
-//    var email: EditText? = null
-//    var password: EditText? = null
-//    var uni: EditText? = null
-//    var phone: EditText? = null
 
     var usernameId: EditText? = null
     var emailId: EditText? = null
@@ -57,22 +52,26 @@ class RegisterUser : AppCompatActivity() {
 
         register = findViewById(R.id.register)
         loginLink = findViewById(R.id.loginLink)
-//        val loading = binding.loading
 
         // Register button onClick
         register?.setOnClickListener {
+
+            register?.setVisibility(View.GONE)
+
             MyService.hideKeyboard((register)!!) // hide the keyboard
             isAllFieldsChecked = CheckAllFields()
             // the boolean variable turns to be true then
             if (isAllFieldsChecked) {
                 auth.createUserWithEmailAndPassword(email.text.toString(),password.text.toString()).addOnCompleteListener { task ->
                     if(task.isSuccessful){
+                        register?.setVisibility(View.VISIBLE)
                         MyService.createUser(username.text.toString(), email.text.toString(), password.text.toString(), uni.text.toString(), phone.text.toString());
                         Toast.makeText(applicationContext,"Successfully registered!",Toast.LENGTH_LONG).show();
                         val i = Intent(this, LoginUser::class.java)
                         startActivity(i)
                     }
                 }.addOnFailureListener { exception ->
+                    register?.setVisibility(View.VISIBLE)
                     Toast.makeText(applicationContext,exception.localizedMessage,Toast.LENGTH_LONG).show()
                 }
             }
