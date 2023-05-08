@@ -32,6 +32,26 @@
         <activity
             android:name=".ui.InitialPage"
             android:exported="false" />
+        <!-- Vishwa  Start-->
+        <activity
+            android:name=".ui.course.AddCourse"
+            android:exported="false" />
+        <activity
+            android:name=".ui.course.Course_details"
+            android:exported="false"
+            android:label="@string/title_activity_course_details"
+            android:theme="@style/Theme.ElearningMAD.NoActionBar" />
+        <activity
+            android:name=".ui.course.course_list_item"
+            android:exported="false"
+            android:label="@string/title_activity_course_list_item"
+            android:theme="@style/Theme.ElearningMAD.NoActionBar" />
+        <activity
+            android:name=".ui.course.Activity_fetching"
+            android:exported="false"
+            android:label="@string/title_activity_fetching"
+            android:theme="@style/Theme.ElearningMAD.NoActionBar" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"
