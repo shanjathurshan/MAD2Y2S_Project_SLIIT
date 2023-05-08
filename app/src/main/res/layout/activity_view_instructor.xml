@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/gradient_drawable"
     tools:context=".ViewInstructor">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -32,6 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="122dp"
         android:layout_marginTop="13dp"
+        android:backgroundTint="#50C878"
         android:text="Add Instructor"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
