@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.example.elearningmad.Database.MyService
 import com.example.elearningmad.R
@@ -27,6 +28,8 @@ class LoginUser : AppCompatActivity() {
     var passwordId: EditText? = null
     var login: Button? = null
     var isAllFieldsChecked = false
+
+    var resetLink: TextView? = null
 
     var MyService = MyService();
 
@@ -49,6 +52,7 @@ class LoginUser : AppCompatActivity() {
         val editor:  SharedPreferences.Editor = sharedPref.edit()
 
         login = findViewById(R.id.login)
+        resetLink = findViewById(R.id.resetLink)
 
         login?.setOnClickListener {
 
@@ -94,6 +98,13 @@ class LoginUser : AppCompatActivity() {
                 }
 
             }
+        }
+
+        // loginLink onclick
+        resetLink?.setOnClickListener {
+//            val i = Intent(this, LoginUser::class.java)
+//            startActivity(i)
+            setContentView(R.layout.fragment_forget_password)
         }
 
 
