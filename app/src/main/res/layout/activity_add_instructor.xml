@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/gradient_drawable"
     tools:context=".AddInstructor">
-
+<!-- test comment -->
     <EditText
         android:id="@+id/edName"
         android:layout_width="379dp"
