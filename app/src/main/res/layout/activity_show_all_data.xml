@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/gadient_background"
-    tools:context=".SingleCoursePage.ShowAllData">
+    android:background="@drawable/rectangle_profile1"
+    tools:context=".ShowAllData">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleview"
@@ -16,5 +16,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:listitem="@layout/add_recycleview"/>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

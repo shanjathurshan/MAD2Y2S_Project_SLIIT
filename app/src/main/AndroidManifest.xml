@@ -11,27 +11,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ElearningMAD"
         tools:targetApi="31">
-<<<<<<< HEAD
+
         <activity
-            android:name=".WeekData"
-            android:exported="false" />
+            android:name=".SingleCoursePage.Model.WeekData"
+            android:exported="true" />
         <activity
-            android:name=".WeekAdapter"
-            android:exported="false" />
-        <activity
-            android:name=".Recycleview"
-            android:exported="false" />
+            android:name=".SingleCoursePage.Adapter.WeekAdapter"
+            android:exported="true" />
+
         <activity
             android:name=".UpdateDelete"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ShowAllData"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".AddRewiev"
-            android:exported="false" />
-=======
->>>>>>> 254b41bb2bc87c6e4e889e112e45cf9d0551e645
+            android:exported="true" >
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <service
             android:name=".Database.MyService"
@@ -57,11 +60,7 @@
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data

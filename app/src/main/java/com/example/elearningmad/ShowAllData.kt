@@ -1,4 +1,4 @@
-package com.example.elearningmad.SingleCoursePage
+package com.example.elearningmad
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -10,8 +10,7 @@ import com.example.elearningmad.SingleCoursePage.Adapter.WeekAdapter
 import com.example.elearningmad.SingleCoursePage.Model.WeekData
 import com.google.firebase.database.*
 
-class
-ShowAllData : AppCompatActivity() {
+class ShowAllData : AppCompatActivity() {
 
 
     private lateinit var employeeItem: RecyclerView
@@ -34,7 +33,7 @@ ShowAllData : AppCompatActivity() {
     private fun getEmployeeData(){
         employeeItem.visibility= View.GONE
 
-        dbRef= FirebaseDatabase.getInstance().getReference("Employees")
+        dbRef= FirebaseDatabase.getInstance().getReference("WeekData")
 
         dbRef.addValueEventListener(object: ValueEventListener {
 

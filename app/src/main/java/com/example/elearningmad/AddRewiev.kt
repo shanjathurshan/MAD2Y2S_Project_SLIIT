@@ -1,4 +1,4 @@
-package com.example.elearningmad.SingleCoursePage
+package com.example.elearningmad
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
-import com.example.elearningmad.R
 import com.example.elearningmad.SingleCoursePage.Model.WeekData
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -19,7 +18,7 @@ class AddRewiev : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_rewiev)
 
-        dbRef=FirebaseDatabase.getInstance().getReference("WeeKData")
+        dbRef=FirebaseDatabase.getInstance().getReference("WeekData")
         val add=findViewById<Button>(R.id.btnAdd)
 
 
@@ -40,7 +39,7 @@ class AddRewiev : AppCompatActivity() {
         val LastWeekLesson=lastWeekLesson.text.toString()
 
         val key=dbRef.push().key!!
-        val addData= WeekData(Title,Des, LastWeekLesson,key)
+        val addData=WeekData(Title,Des, LastWeekLesson,key)
 
         dbRef.child(key).setValue(addData).addOnCompleteListener {
             Toast.makeText(this,"Data added",Toast.LENGTH_SHORT).show()
