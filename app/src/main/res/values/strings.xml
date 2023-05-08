@@ -35,4 +35,72 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!---Vishwa's strings -->
+
+    <string name="MyCourses">My Courses</string>
+    <string name="GradeAndSubject">Grade 8 | Science</string>
+    <string name="CourseCode">G0801</string>
+    <string name="EnrolledDate">EnrolledDate - 2022-03-13</string>
+    <string name="Grade13CombinedMaths">Grade 13 | Combined Maths</string>
+    <string name="G1302">G1302</string>
+    <string name="Grade01Sinhala">Grade 01 | Sinhala</string>
+    <string name="G0103">G0103</string>
+    <string name="Grade04English">Grade 04 | English</string>
+    <string name="G0404">G0404</string>
+    <string name="Courses">Courses</string>
+    <string name="AddCourse">Add Course</string>
+
+    <string name="Example_Tamil">Example : Tamil</string>
+    <string name="EnterCourseID">Enter Course ID</string>
+    <string name="Example_G0123">Example : G0123</string>
+    <string name="CourseInstructor">Course Instructor</string>
+    <string name="CourseDuration">Course Duration</string>
+    <string name="CourseDescription">Course Description</string>
+    <string name="AddDescription">Add Description</string>
+    <string name="CourseFees">Course Fees</string>
+
+    <string name="Example_8hours_30Minutes">Example : 8hours 30minutes</string>
+    <string name="Example_Mr_Thusithanjana">Example : Mr. Thusithanjana</string>
+    <string name="Submit">Submit</string>
+    <string name="SeeCourses">See all courses</string>
+    <string name="url1">https://www.youtube.com/watch?v=wmonu091P3U</string>
+
+    <string name="EditCourseID">Edit Course ID</string>
+    <string name="EditCourseDuration">Edit Course Duration</string>
+    <string name="EditInstructor">Edit Instructor</string>
+    <string name="EditCourseDecscription">Edit Course Decscription</string>
+    <string name="EditCourseFees">Edit Course Fees</string>
+    <string name="Update">Update</string>
+    <string name="Tamil">Tamil</string>
+    <string name="G0123">G0123</string>
+    <string name="_8hours30minuites">8hours 30minuites</string>
+    <string name="TharinduHapuarachchi">Mr. Tharindu Hapuarachchi</string>
+    <string name="test_desc">test tes test test test test test test</string>
+    <string name="Rs_200">Rs. 200</string>
+    <string name="DeleteCourse">Delete Course</string>
+    <string name="UpdateCourseDetails">Update Course Details</string>
+    <string name="EnterCourseName">Enter Course Name</string>
+    <string name="EditCourseName">Edit Course Name</string>
+    <string name="Current_enrollment_1">Currently You have enrolled to 5 courses</string>
+    <string name="Example_text_1">Example : This course is about Combained Mathematics</string>
+    <string name="SeeMoreDetails">See more details</string>
+    <string name="UploadRecording">Upload Redording</string>
+    <string name="title_activity_update_course_admin">UpdateCourse_Admin</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_all_courses_admin">All_courses_admin</string>
+    <string name="recordingUrl">Add recording URL</string>
+    <string name="title_activity_display_all_courses">Display_all_courses</string>
+    <string name="title_activity_fetching">Activity_fetching</string>
+    <string name="title_activity_course_list_item">course_list_item</string>
+    <string name="title_activity_course_details">Course_details</string>
+    <string name="my_text">This is an <u>underline</u>.</string>
+
+
 </resources>

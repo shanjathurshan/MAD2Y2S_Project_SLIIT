@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.elearningmad.databinding.ActivityMainBinding
 import com.example.elearningmad.ui.InitialPage
 import com.example.elearningmad.ui.RegisterUser
+import com.example.elearningmad.ui.course.AddCourse
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.firestore.ktx.firestore
@@ -76,6 +77,11 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, RegisterUser::class.java)
 
         // Call the startActivity method and pass the Intent object as an argument
+        startActivity(intent)
+    }
+
+    fun goToCreateCourses(view: View) {
+        val intent = Intent(this, AddCourse::class.java)
         startActivity(intent)
     }
 }
