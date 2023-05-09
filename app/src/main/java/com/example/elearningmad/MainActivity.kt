@@ -84,4 +84,9 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, AddCourse::class.java)
         startActivity(intent)
     }
+
+    fun goToSingleCourseCreate(view: View) {
+        val intent = Intent(this, AddRewiev::class.java)
+        startActivity(intent)
+    }
 }
