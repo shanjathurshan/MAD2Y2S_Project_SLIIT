@@ -33,10 +33,18 @@ class MainActivity : AppCompatActivity() {
 
 //        // ACCESS THE BUTTON USING BY ID
         val button = findViewById<Button>(R.id.button2)
+        val Instbutton = findViewById<Button>(R.id.button6)
 
         button.setOnClickListener {
             // Create an Intent object that specifies the activity to navigate to
             val intent = Intent(this, InitialPage::class.java)
+
+            // Call the startActivity method and pass the Intent object as an argument
+            startActivity(intent)
+        }
+
+        Instbutton.setOnClickListener {
+            val intent = Intent(this, AddInstructor::class.java)
 
             // Call the startActivity method and pass the Intent object as an argument
             startActivity(intent)
@@ -80,6 +88,7 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
+
     fun goToCreateCourses(view: View) {
         val intent = Intent(this, AddCourse::class.java)
         startActivity(intent)
@@ -89,4 +98,5 @@ class MainActivity : AppCompatActivity() {
         val intent = Intent(this, AddRewiev::class.java)
         startActivity(intent)
     }
+
 }
