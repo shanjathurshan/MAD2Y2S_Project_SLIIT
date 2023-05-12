@@ -2,6 +2,7 @@ package com.example.elearningmad.ui.Profile
 
 import android.content.ContentValues
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -10,12 +11,17 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ProgressBar
 import android.widget.TextView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.elearningmad.R
+import com.example.elearningmad.Database.MyService
+import com.example.elearningmad.MainActivity
 import com.example.elearningmad.databinding.FragmentProfileBinding
 import com.example.elearningmad.ui.EditProfile
+import com.example.elearningmad.ui.LoginUser
 import com.example.elearningmad.ui.data.model.Students
+import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 
@@ -31,6 +37,7 @@ class ProfileFragment : Fragment() {
     // This property is only valid between onCreateView and
     // onDestroyView.
     private val binding get() = _binding!!
+    var MyService = MyService();
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -90,9 +97,9 @@ class ProfileFragment : Fragment() {
                     userDetails = Students(
                         document.data["username"].toString(),
                         document.data["email"].toString(),
-                        "null",
                         document.data["university"].toString(),
-                        document.data["phone"].toString()
+                        document.data["phone"].toString(),
+                        document.data["type"].toString(),
                     )
                     profileName.text = document.data["username"].toString()
                     university.text = document.data["university"].toString()
@@ -110,6 +117,69 @@ class ProfileFragment : Fragment() {
             .addOnFailureListener { exception ->
                 Log.w(ContentValues.TAG, "Error getting documents.", exception)
             }
+
+        val logout: Button = binding.logout
+        logout.setOnClickListener {
+            val sharedPref : SharedPreferences = requireContext().getSharedPreferences("PREFERENCE_FILE_KEY",
+                AppCompatActivity.MODE_PRIVATE
+            )
+            val editor:  SharedPreferences.Editor = sharedPref.edit()
+            editor.clear()
+            editor.commit()
+
+            var userId = sharedPref.getString("userId", "defaultname")
+            var userType = sharedPref.getString("userType", "defaultname")
+
+            Log.d(ContentValues.TAG, "userId - ${userId}")
+            Log.d(ContentValues.TAG, "type - $userType")
+
+            val intent = Intent(requireContext(), LoginUser::class.java)
+            startActivity(intent)
+        }
+
+        val deleteAccount: Button = binding.deleteAccount
+        deleteAccount.setOnClickListener {
+            val sharedPref : SharedPreferences = requireContext().getSharedPreferences("PREFERENCE_FILE_KEY",
+                AppCompatActivity.MODE_PRIVATE
+            )
+            val editor:  SharedPreferences.Editor = sharedPref.edit()
+
+            var userId = sharedPref.getString("userId", "defaultname")
+            var userType = sharedPref.getString("userType", "defaultname")
+
+            Log.d(ContentValues.TAG, "userId - ${userId}")
+            Log.d(ContentValues.TAG, "type - $userType")
+
+            db.collection("users")
+                .document(userId!!)
+                .delete()
+                .addOnCompleteListener{ task ->
+                    if (task.isSuccessful) {
+
+                        editor.clear()
+                        editor.commit()
+
+                        Toast.makeText(
+                            requireContext(),
+                            "User has been deleted from Database.",
+                            Toast.LENGTH_SHORT
+                        ).show()
+
+                        val intent = Intent(requireContext(), LoginUser::class.java)
+                        startActivity(intent)
+                    } else {
+
+                        Toast.makeText(
+                            requireContext(),
+                            "Fail to delete the user. ",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
+            }
+
+        }
+
+
 
         return root
     }

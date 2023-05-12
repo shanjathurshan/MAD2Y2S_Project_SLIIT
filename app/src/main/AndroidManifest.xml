@@ -11,40 +11,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ElearningMAD"
         tools:targetApi="31">
+
         <activity
             android:name=".ViewInstructor"
-            android:exported="true" >
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".EditInstructor"
             android:exported="false" />
         <activity
             android:name=".AddInstructor"
             android:exported="false" />
-
         <activity
             android:name=".SingleCoursePage.Model.WeekData"
             android:exported="true" />
         <activity
             android:name=".SingleCoursePage.Adapter.WeekAdapter"
             android:exported="true" />
-
         <activity
             android:name=".UpdateDelete"
             android:exported="true" />
         <activity
             android:name=".ShowAllData"
             android:exported="true" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true" >
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
 
         <service
             android:name=".Database.MyService"
@@ -66,18 +54,10 @@
         <activity
             android:name=".ui.InitialPage"
             android:exported="false" />
-        <!-- Vishwa  Start-->
         <activity
-
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-
+            android:name=".ui.InitialPageLecturer"
+            android:exported="false" />
+        <activity
             android:name=".ui.course.AddCourse"
             android:exported="false" />
         <activity
@@ -95,10 +75,19 @@
             android:exported="false"
             android:label="@string/title_activity_fetching"
             android:theme="@style/Theme.ElearningMAD.NoActionBar" />
-
         <activity
             android:name=".AddRewiev"
             android:exported="false" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
         <meta-data
             android:name="preloaded_fonts"

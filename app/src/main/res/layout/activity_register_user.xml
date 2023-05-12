@@ -98,6 +98,24 @@
         android:hint="Password"
         android:inputType="textPassword" />
 
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/radioGroup"
+        android:orientation="horizontal">
+        <RadioButton android:id="@+id/user_student"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Student"
+            android:paddingRight="20dp"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/user_lecturer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lecturer"
+            android:onClick="onRadioButtonClicked"/>
+    </RadioGroup>
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/register"

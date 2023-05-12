@@ -9,6 +9,7 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.example.elearningmad.Database.MyService
 import com.example.elearningmad.R
@@ -27,8 +28,11 @@ class LoginUser : AppCompatActivity() {
     var passwordId: EditText? = null
     var login: Button? = null
     var isAllFieldsChecked = false
+    var userType: String? = null
 
     var MyService = MyService();
+
+    var signup: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -49,6 +53,14 @@ class LoginUser : AppCompatActivity() {
         val editor:  SharedPreferences.Editor = sharedPref.edit()
 
         login = findViewById(R.id.login)
+
+        signup = findViewById(R.id.signup)
+
+        // loginLink onclick
+        signup?.setOnClickListener {
+            val i = Intent(this, RegisterUser::class.java)
+            startActivity(i)
+        }
 
         login?.setOnClickListener {
 
@@ -71,11 +83,26 @@ class LoginUser : AppCompatActivity() {
                                 .addOnSuccessListener { result ->
                                     for (document in result) {
                                         editor.putString("userId", document.id.toString())
+                                        editor.putString("userType", document.data.get("type").toString())
                                         editor.apply()
                                         var userId = sharedPref.getString("userId", "defaultname")
+                                        userType = sharedPref.getString("userType", "defaultname")
+
                                         Log.d(ContentValues.TAG, "userId - ${userId}")
+                                        Log.d(ContentValues.TAG, "type - $userType")
 
                                         Log.d(ContentValues.TAG, "${document.id} => ${document.data}")
+
+                                        // Navigate to home page.
+                                        Toast.makeText(applicationContext,"Successfully logIn!", Toast.LENGTH_LONG).show();
+
+                                        if(userType == "STUDENT"){
+                                            val i = Intent(this, InitialPage::class.java)
+                                            startActivity(i)
+                                        } else {
+                                            val i = Intent(this, InitialPageLecturer::class.java)
+                                            startActivity(i)
+                                        }
                                     }
                                 }
                                 .addOnFailureListener { exception ->
@@ -83,10 +110,6 @@ class LoginUser : AppCompatActivity() {
                                 }
 
                             login?.setVisibility(View.VISIBLE)
-                            // NAvigate to home page.
-                            Toast.makeText(applicationContext,"Successfully logIn!", Toast.LENGTH_LONG).show();
-                            val i = Intent(this, InitialPage::class.java)
-                            startActivity(i)
                         }
                 }.addOnFailureListener { exception ->
                         login?.setVisibility(View.VISIBLE)

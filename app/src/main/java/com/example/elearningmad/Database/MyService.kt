@@ -5,12 +5,14 @@ import android.content.ContentValues
 import android.content.ContentValues.TAG
 import android.content.Context
 import android.content.Intent
+import android.content.SharedPreferences
 import android.os.IBinder
 import android.util.Log
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.elearningmad.ui.data.model.Students
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
@@ -24,10 +26,10 @@ class MyService : Service() {
         TODO("Return the communication channel to the service.")
     }
 
-    fun createUser(username: String, email:String, password: String, uni: String, phone: String ){
+    fun createUser(username: String, email:String, uni: String, phone: String, type: String ){
         // Add a new document with a generated ID
         db.collection("users")
-            .add(Students(username, email, password, uni, phone))
+            .add(Students(username, email, uni, phone, type))
             .addOnSuccessListener { documentReference ->
                 Log.d(ContentValues.TAG, "DocumentSnapshot added with ID: ${documentReference.id}")
             }
@@ -53,6 +55,21 @@ class MyService : Service() {
         } else {
             Log.d(ContentValues.TAG, "User not available!")
         }
+    }
+
+    fun logout(){
+        val sharedPref : SharedPreferences = applicationContext.getSharedPreferences("PREFERENCE_FILE_KEY",
+            AppCompatActivity.MODE_PRIVATE
+        )
+        val editor:  SharedPreferences.Editor = sharedPref.edit()
+        editor.clear()
+        editor.commit()
+
+        var userId = sharedPref.getString("userId", "defaultname")
+        var userType = sharedPref.getString("userType", "defaultname")
+
+        Log.d(ContentValues.TAG, "userId - ${userId}")
+        Log.d(ContentValues.TAG, "type - $userType")
     }
 
 }

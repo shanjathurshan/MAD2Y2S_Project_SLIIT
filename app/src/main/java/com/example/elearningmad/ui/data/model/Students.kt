@@ -6,15 +6,15 @@ package com.example.elearningmad.ui.data.model
 class Students{
     var username: String = ""
     var email: String = ""
-    var password: String = ""
     var university: String = ""
     var phone: String = ""
+    var type: String = ""
 
-    constructor(a: String,b: String,c: String, d: String, e: String){
+    constructor(a: String,b: String, d: String, e: String, f: String){
         username = a;
         email = b;
-        password = c;
         university = d;
         phone = e;
+        type = f;
     }
 }
