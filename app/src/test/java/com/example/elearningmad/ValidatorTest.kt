@@ -11,7 +11,7 @@ class ValidatorTest{
     @Test
     fun loginValidatorTest() {
         var email = "shan@gmail.com"
-        var password = "www"
+        var password = "123456"
         var result = Validator.loginValidateInput(email, password)
         assertThat(result).isEqualTo(true)
     }
