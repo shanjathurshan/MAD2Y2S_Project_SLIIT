@@ -1,8 +1,10 @@
 package com.example.elearningmad
 
+import android.content.ContentValues
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
@@ -38,15 +40,28 @@ class AddRewiev : AppCompatActivity() {
         val Title=title.text.toString()
         val LastWeekLesson=lastWeekLesson.text.toString()
 
-        val key=dbRef.push().key!!
-        val addData=WeekData(Title,Des, LastWeekLesson,key)
+        if (Des.isEmpty() || Title.isEmpty() || LastWeekLesson.isEmpty()) {
+            Log.d(ContentValues.TAG, "working validation")
+            if (Des.isEmpty()) {
+                des.error = "Please enter description"
+            }
+            if (Title.isEmpty()) {
+                title.error = "Please enter title"
+            }
+            if (LastWeekLesson.isEmpty()) {
+                lastWeekLesson.error = "Please enter week"
+            }
+        } else {
+            val key = dbRef.push().key!!
+            val addData = WeekData(Title, Des, LastWeekLesson, key)
 
-        dbRef.child(key).setValue(addData).addOnCompleteListener {
-            Toast.makeText(this,"Data added",Toast.LENGTH_SHORT).show()
-            intent = Intent(applicationContext, ShowAllData::class.java)
-            startActivity(intent)
-        }.addOnFailureListener {
-            Toast.makeText(this,"Data added error",Toast.LENGTH_SHORT).show()
+            dbRef.child(key).setValue(addData).addOnCompleteListener {
+                Toast.makeText(this, "Data added", Toast.LENGTH_SHORT).show()
+                intent = Intent(applicationContext, ShowAllData::class.java)
+                startActivity(intent)
+            }.addOnFailureListener {
+                Toast.makeText(this, "Data added error", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 }
